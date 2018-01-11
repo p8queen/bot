@@ -1,4 +1,3 @@
-#test git
 import json 
 import requests
 
@@ -12,14 +11,18 @@ def get_url(url):
     return content
 
 
-def get_json_from_url(url):
+def get_json_from_url(url,coin_pair):
     content = get_url(url)
     js = json.loads(content)
-    return js
+    return js[coin_pair]
 	
 def main():
-	decojson = get_json_from_url(URL)
-	print decojson["USDT_BTC"]
+	decojson = get_json_from_url(URL,"USDT_BTC")
+        #print precio,high24,low24,change24 
+	print "precio", decojson["last"]
+	print "high24", decojson["high24hr"]
+	print "low24", decojson["low24hr"]
+	print "chage24", decojson["percentChange"]
 	
 
 if __name__ == '__main__':
