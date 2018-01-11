@@ -17,7 +17,7 @@ def get_json_from_url(url,coin_pair):
     return js[coin_pair]
 	
 def main():
-	decojson = get_json_from_url(URL,"USDT_BTC")
+	decojson = get_json_from_url(URL,"USDT_XRP")
         #print precio,high24,low24,change24 
 	print "precio", decojson["last"]
 	print "high24", decojson["high24hr"]
