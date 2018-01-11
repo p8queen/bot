@@ -1,0 +1,3 @@
+#coin_pair,soportes,resistencias
+USDT_BTC, 12800, 16200
+USDT_XRP, 1.6, 2.7

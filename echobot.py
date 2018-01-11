@@ -29,13 +29,20 @@ def build_text(decojson):
 
 ### ROBOT ####
 def make_message(t):
-	coin_pair = ""
-	if "USDT_BTC".find(t.upper()) > -1:
-		decojson = get_json_from_url_exchange(URLPOLONIEX,"USDT_BTC")
+	t = t.strip().upper() # " Xrp " to "XRP" 
+	coin_pair = "USDT_" + t
+	try:
+		decojson = get_json_from_url_exchange(URLPOLONIEX,coin_pair)
 		t = build_text(decojson)
-	if "USDT_XRP".find(t.upper()) > -1:
-		decojson = get_json_from_url_exchange(URLPOLONIEX,"USDT_XRP")
-		t = build_text(decojson)
+		lines = [line.rstrip('\n') for line in open('soportes_resistencias.txt')]
+		for x in lines:
+			#BTC_USDT, 12800, 16800
+			tupla = x.split(',')
+			if coin_pair == tupla[0]:
+				t = t + "\n" + "soporte: " + tupla[1] + ", resistencia: " + tupla[2]
+				break
+	except Exception as e:
+		t = t + " simbolo no encontrado"
 	return t
 		
 
