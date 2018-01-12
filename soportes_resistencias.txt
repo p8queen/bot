@@ -1,3 +1,6 @@
 #coin_pair,soportes,resistencias
 USDT_BTC, 12800, 16200
 USDT_XRP, 1.6, 2.7
+USDT_BCH, 2300, 2870
+USDT_REP, 70, 110
+USDT_NXT, 0.4, 0.75
