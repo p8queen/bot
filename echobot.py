@@ -27,9 +27,17 @@ def build_text(decojson):
 	t = t + "change24 " + decojson["percentChange"] + "\n"
 	return t
 
+def get_wallet():
+	f = open('wallet.txt')
+	t = f.read()
+	f.close()
+	return t
+	
 ### ROBOT ####
 def make_message(t):
 	t = t.strip().upper() # " Xrp " to "XRP" 
+	if t=="WALLET":
+		return get_wallet()
 	coin_pair = "USDT_" + t
 	try:
 		decojson = get_json_from_url_exchange(URLPOLONIEX,coin_pair)

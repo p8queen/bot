@@ -1,4 +1,4 @@
-#exchange,par_coin,cantidad,precio_compra,fecha
+exchange,par_coin,cantidad,precio_compra,fecha
 cex.io, USD_XRP, 41.26, 2.9, 1 ene 2018
 cex.io, USD_XRP, 47, 2.14, 10 ene 2018
 poloniex, USD_BTC, 0.01, 13950, 10 ene 2018
