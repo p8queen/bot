@@ -1,3 +1,5 @@
+web:python echobot.py
+
 [requires]
 
 python_version = "2.7.14"
