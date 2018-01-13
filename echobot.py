@@ -2,8 +2,10 @@ import json
 import requests
 import time
 import config
+import os
 
-TOKEN = config.KEY
+#TOKEN = config.KEY
+TOKEN = os.environ.get('TOKEN')
 URL = "https://api.telegram.org/bot{}/".format(TOKEN)
 URLPOLONIEX="https://poloniex.com/public?command=returnTicker"
 
